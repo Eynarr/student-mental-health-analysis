@@ -1,17 +1,14 @@
-# 📊 Student Mental Health Analysis
+# Student Mental Health ETL Pipeline
 
-This project explores how studying abroad may affect students' mental health.
-The analysis focuses on international vs domestic students, and how factors like length of stay and social connection relate to depression and stress levels.
+## 📌 Project Description
 
----
+This project analyzes student mental health data using a simple ETL pipeline.
 
-## 📌 Objective
-
-To analyze whether international students experience different mental health outcomes compared to domestic students, and to explore if the length of stay has an impact.
+The goal is to understand how the length of stay in a foreign country affects mental health for international students.
 
 ---
 
-## 🧰 Tools & Technologies
+## ⚙️ Technologies Used
 
 - Python
 - Pandas
@@ -21,7 +18,38 @@ To analyze whether international students experience different mental health out
 
 ---
 
-## 📂 Project Structure
+## 🔄 ETL Process
+
+### 1. Extract
+
+- Load raw data from a CSV file
+
+### 2. Transform
+
+- Clean column names
+- Select relevant columns
+- Handle missing values
+- Normalize text data
+- Convert data types
+
+### 3. Load
+
+- Load cleaned data into PostgreSQL using SQLAlchemy
+
+---
+
+## 📊 Analysis
+
+The project uses SQL to analyze:
+
+- Number of international students by length of stay
+- Average depression score (PHQ-9)
+- Average social connectedness score (SCS)
+- Average acculturative stress score (ASISS)
+
+---
+
+## 📁 Project Structure
 
 ```
 project/
@@ -34,39 +62,25 @@ project/
 │   ├── transform_data.py
 │   └── load_data.py
 │
-├── notebooks/
-│   └── analysis.ipynb
-│
 ├── sql/
-│   └── queries.sql
+│   └── analysis.sql
 │
-└── README.md
+├── pipeline.py
+├── README.md
+└── .env
 ```
 
 ---
 
-## 🔄 Data Pipeline
+## Key Insight
 
-1. Load raw dataset
-2. Clean and select relevant columns using pandas
-3. Save cleaned dataset
-4. Load data into PostgreSQL
-5. Perform analysis using SQL and Python
+This project explores how mental health indicators change depending on how long international students stay in the host country.
 
 ---
 
-## 📊 Key Features Used
+## 🎯 Learning Goals
 
-- `inter_dom` (student type)
-- `stay` (length of stay in years)
-- `todep` (depression score)
-- `tosc` (social connectedness)
-- `toas` (acculturative stress)
-- Demographics (age, gender, academic level, region)
-
----
-
-## 🚀 Status
-
-This project is in progress.
-New analysis and improvements are added as I continue learning.
+- Understand ETL process
+- Practice data cleaning with pandas
+- Load data into PostgreSQL
+- Write SQL queries for analysis
