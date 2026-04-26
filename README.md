@@ -44,7 +44,7 @@ The project includes data cleaning, data loading into a database, and SQL analys
 The data was analyzed using SQL with different techniques such as:
 
 - CASE statements
-- CTEs (Common Table Expressions)
+- CTEs
 - Subqueries
 - Window functions
 - Aggregate functions
@@ -54,38 +54,40 @@ The data was analyzed using SQL with different techniques such as:
 
 ## 📈 Key Insights
 
-### 1. Mental health improves over time
+### 1. Mental health over time
 
-- The average depression score tends to decrease as the number of years in the country increases
-- This suggests students adapt over time to the new environment
-
----
-
-### 2. Social connection is very important
-
-- Students with low social connectedness scores tend to have higher depression levels
-- This indicates that lack of social support is strongly related to mental health issues
+- Most students are in their first 1–4 years in the country
+- There is no clear trend in depression scores over time
+- Results for later years (5+) are not reliable due to very small number of students
 
 ---
 
-### 3. Difference between international and domestic students
+### 2. Social connection
 
-- There is a measurable difference in average depression scores between the two groups
-- One group shows consistently higher values, indicating a possible imbalance in mental health risk
-
----
-
-### 4. High-risk students exist (outliers)
-
-- Some students have depression scores significantly above the average (greater than mean + standard deviation)
-- These students may require special attention or support
+- Students with lower social connectedness tend to have higher depression scores
+- This suggests that social support may be important for mental health
 
 ---
 
-### 5. High depression concentration in specific groups
+### 3. Comparison between groups
 
-- The top 25% of students with the highest depression scores also tend to have low social connectedness
-- This combination highlights a vulnerable group of students
+- There is a small difference in average depression scores between domestic and international students
+- In this dataset, domestic students have a slightly higher average
+- However, the difference is small and not consistent
+
+---
+
+### 4. High-risk students
+
+- Some students have depression scores much higher than the average
+- These high-risk students appear in both domestic and international groups
+
+---
+
+### 5. Vulnerable patterns
+
+- Some students with high depression scores also have lower social connectedness
+- This group may need more support
 
 ---
 
