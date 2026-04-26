@@ -1,6 +1,7 @@
 -- 1. Trend of mental health over time
 
 SELECT years_country,
+	   COUNT(*) AS total_students,
 	   ROUND(AVG(depression_score)::NUMERIC,2) AS avg_depression,
 	   ROUND(AVG(acculturative_stress_score)::NUMERIC,2) AS avg_stress
 FROM students
