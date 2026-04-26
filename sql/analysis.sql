@@ -21,3 +21,13 @@ SELECT years,
        ROUND(AVG(avg_year_depression) OVER(ORDER BY years ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW),2) AS running_avg
 FROM depression_per_year 
 ORDER BY years;
+
+-- 3. Detection of isolated students
+
+WITH stats_percentile AS (
+SELECT PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY depression_score) AS p75
+FROM students
+)
+SELECT *
+FROM students s, stats_percentile sp
+WHERE s.depression_score >= sp.p75 AND s.social_connectedness_score <= 21;
