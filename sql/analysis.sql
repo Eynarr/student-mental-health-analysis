@@ -45,10 +45,10 @@ FROM students)
 SELECT *,
 	   ROUND(ABS(avg_dom_depression - avg_inter_depression)::NUMERIC,2) AS diff_depression_groups,
 	   CASE
-	   		WHEN avg_dom_depression > avg_inter_depression THEN 'Domestic higher'
-	   		WHEN avg_dom_depression < avg_inter_depression THEN 'Internatinal higher'
+	   		WHEN avg_dom_depression > avg_inter_depression THEN 'Domestic Higher'
+	   		WHEN avg_dom_depression < avg_inter_depression THEN 'Internatinal Higher'
 	   		ELSE 'Equal'
-	   END
+	   END AS category
 FROM avg_type_depression;
 
 -- 5. Detection of high-risk outliers
