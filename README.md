@@ -112,8 +112,6 @@ project/
 ├── README.md
 ```
 
-## ``
-
 ## 🎯 Learning Goals
 
 - Understand the ETL process
